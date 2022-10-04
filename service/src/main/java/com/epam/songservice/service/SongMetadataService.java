@@ -17,6 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @author www.epam.com
@@ -62,14 +63,14 @@ public class SongMetadataService {
     }
 
     private MultipleSongMetadataIdDto deleteSongMetadataById(List<Integer> ids) {
-        val entities = ids.stream().map(id -> repository.findById(id).orElseThrow(() -> new SongMetadataNotExists("Song with id = " + id + " doesn't exist"))).toList();
-        val deletedIds = entities.stream().map(SongMetadata::getId).peek(repository::deleteById).toList();
+        val entities = ids.stream().map(id -> repository.findById(id).orElseThrow(() -> new SongMetadataNotExists("Song with id = " + id + " doesn't exist"))).collect(Collectors.toList());
+        val deletedIds = entities.stream().map(SongMetadata::getId).peek(repository::deleteById).collect(Collectors.toList());
         return new MultipleSongMetadataIdDto(deletedIds);
     }
 
     private MultipleSongMetadataIdDto deleteSongMetadataByResourceIds(List<Integer> ids) {
-        val entities = ids.stream().map(id -> repository.findByResourceId(id).orElseThrow(() -> new SongMetadataNotExists("Song with resource = " + id + " doesn't exist"))).toList();
-        val deletedIds = entities.stream().map(SongMetadata::getId).peek(repository::deleteById).toList();
+        val entities = ids.stream().map(id -> repository.findByResourceId(id).orElseThrow(() -> new SongMetadataNotExists("Song with resource = " + id + " doesn't exist"))).collect(Collectors.toList());
+        val deletedIds = entities.stream().map(SongMetadata::getId).peek(repository::deleteById).collect(Collectors.toList());
         return new MultipleSongMetadataIdDto(deletedIds);
     }
 

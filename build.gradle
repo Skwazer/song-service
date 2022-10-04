@@ -14,7 +14,8 @@ subprojects {
 
 	group = 'com.epam.song-service'
 	version = '0.0.1'
-	sourceCompatibility = '16'
+	sourceCompatibility = JavaVersion.VERSION_11
+	targetCompatibility = JavaVersion.VERSION_11
 
 	repositories {
 		mavenCentral()
