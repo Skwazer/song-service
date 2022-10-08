@@ -6,9 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
-/**
- * @author www.epam.com
- */
+
 @Repository
 public interface SongMetadataRepository extends JpaRepository<SongMetadata, Integer> {
     Optional<SongMetadata> findByResourceId(long id);

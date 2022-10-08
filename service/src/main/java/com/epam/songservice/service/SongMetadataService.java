@@ -19,9 +19,7 @@ import org.springframework.util.CollectionUtils;
 import java.util.List;
 import java.util.stream.Collectors;
 
-/**
- * @author www.epam.com
- */
+
 @Service
 @Slf4j
 @RequiredArgsConstructor

@@ -11,9 +11,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import java.util.List;
 
-/**
- * @author www.epam.com
- */
+
 @RequiredArgsConstructor
 public class SongServiceClientImpl implements SongServiceClient{
 

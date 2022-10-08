@@ -5,9 +5,7 @@ import lombok.Data;
 
 import java.util.List;
 
-/**
- * @author www.epam.com
- */
+
 @Data
 @AllArgsConstructor
 public class MultipleSongMetadataIdDto {

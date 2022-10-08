@@ -9,9 +9,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
-/**
- * @author www.epam.com
- */
+
 @Builder
 @Data
 public class SongMetadataDto {

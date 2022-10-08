@@ -6,9 +6,7 @@ import com.epam.songservice.dto.SongMetadataIdDto;
 
 import java.util.List;
 
-/**
- * @author www.epam.com
- */
+
 public interface SongServiceClient {
     SongMetadataIdDto storeSongMetadata(SongMetadataDto songMetadata);
 

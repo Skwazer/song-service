@@ -13,9 +13,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-/**
- * @author www.epam.com
- */
+
 @Entity
 @Table(name = "songs")
 @Builder(toBuilder = true)

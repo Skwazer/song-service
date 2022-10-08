@@ -5,9 +5,7 @@ import com.epam.songservice.dto.SongMetadataIdDto;
 import com.epam.songservice.model.SongMetadata;
 import org.springframework.stereotype.Component;
 
-/**
- * @author www.epam.com
- */
+
 @Component
 public class SongMetadataMapper {
 

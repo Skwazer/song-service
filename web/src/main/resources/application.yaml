@@ -5,9 +5,9 @@ security:
     enable: false
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/songs
-    username:
-    password:
+    url: jdbc:postgresql://localhost:5432/microservices
+    username: postgres
+    password: postgres
   jpa:
     hibernate:
       ddl-auto: update
