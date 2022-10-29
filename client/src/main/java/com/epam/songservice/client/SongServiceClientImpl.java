@@ -13,7 +13,7 @@ import java.util.List;
 
 
 @RequiredArgsConstructor
-public class SongServiceClientImpl implements SongServiceClient{
+public class SongServiceClientImpl implements SongServiceClient {
 
     @Value("${song.service.baseUrl}")
     private String baseUrl;
@@ -41,6 +41,6 @@ public class SongServiceClientImpl implements SongServiceClient{
 
     @Override
     public SongMetadataDto findSongMetadataByResourceId(Integer resourceId) {
-        return songServiceRestTemplate.getForEntity(UriComponentsBuilder.fromHttpUrl(baseUrl).queryParam("resourceId" ,resourceId).toUriString(), SongMetadataDto.class).getBody();
+        return songServiceRestTemplate.getForEntity(UriComponentsBuilder.fromHttpUrl(baseUrl).queryParam("resourceId", resourceId).toUriString(), SongMetadataDto.class).getBody();
     }
 }

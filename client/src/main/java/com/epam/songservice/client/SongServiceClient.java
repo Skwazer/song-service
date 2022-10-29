@@ -1,6 +1,5 @@
 package com.epam.songservice.client;
 
-import com.epam.songservice.dto.MultipleSongMetadataIdDto;
 import com.epam.songservice.dto.SongMetadataDto;
 import com.epam.songservice.dto.SongMetadataIdDto;
 

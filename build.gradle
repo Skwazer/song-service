@@ -1,39 +1,51 @@
 plugins {
-	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-	id 'org.springframework.boot' version '2.7.0'
-	id 'maven-publish'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'org.springframework.boot' version '2.7.0'
+    id 'maven-publish'
 }
 
 
 subprojects {
-	apply plugin: 'java'
-	apply plugin: 'java-library'
-	apply plugin: 'io.spring.dependency-management'
-	apply plugin: 'org.springframework.boot'
-	apply plugin: 'maven-publish'
+    apply plugin: 'java'
+    apply plugin: 'java-library'
+    apply plugin: 'io.spring.dependency-management'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'maven-publish'
 
-	group = 'com.epam.song-service'
-	version = '0.0.1'
-	sourceCompatibility = JavaVersion.VERSION_11
-	targetCompatibility = JavaVersion.VERSION_11
+    group = 'com.epam.song-service'
+    version = '0.0.1'
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
 
-	repositories {
-		mavenCentral()
-	}
+    repositories {
+        mavenCentral()
+    }
 
-	dependencies {
-		compileOnly 'org.projectlombok:lombok:1.18.24'
-		annotationProcessor 'org.projectlombok:lombok:1.18.24'
+    dependencies {
+        compileOnly 'org.projectlombok:lombok:1.18.24'
+        annotationProcessor 'org.projectlombok:lombok:1.18.24'
 
-		testCompileOnly 'org.projectlombok:lombok:1.18.24'
-		testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
+        testCompileOnly 'org.projectlombok:lombok:1.18.24'
+        testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
 
-		implementation 'org.springframework.boot:spring-boot-starter-web'
+        implementation 'org.springframework.boot:spring-boot-starter-web'
 
-		testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	}
+        implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
 
-	tasks.named('test') {
-		useJUnitPlatform()
-	}
+        testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    }
+
+    ext {
+        set('springCloudVersion', "2021.0.4")
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+        }
+    }
+
+    tasks.named('test') {
+        useJUnitPlatform()
+    }
 }

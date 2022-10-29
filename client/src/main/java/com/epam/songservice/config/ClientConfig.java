@@ -8,7 +8,6 @@ import org.springframework.web.client.RestTemplate;
 
 import java.time.Duration;
 
-
 @Configuration
 public class ClientConfig {
 

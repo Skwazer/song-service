@@ -51,10 +51,10 @@ public class SongMetadataService {
 
     @Transactional
     public MultipleSongMetadataIdDto deleteSongMetadata(List<Integer> ids, List<Integer> resourceIds) {
-        if(!CollectionUtils.isEmpty(ids) && CollectionUtils.isEmpty(resourceIds)) {
+        if (!CollectionUtils.isEmpty(ids) && CollectionUtils.isEmpty(resourceIds)) {
             return deleteSongMetadataById(ids);
         }
-        if(CollectionUtils.isEmpty(ids) && !CollectionUtils.isEmpty(resourceIds)) {
+        if (CollectionUtils.isEmpty(ids) && !CollectionUtils.isEmpty(resourceIds)) {
             return deleteSongMetadataByResourceIds(resourceIds);
         }
         throw new SongMetadataServiceValidationException("Only one request param should be provided");
