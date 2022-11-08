@@ -13,7 +13,7 @@ subprojects {
     apply plugin: 'maven-publish'
 
     group = 'com.epam.song-service'
-    version = '0.0.1'
+    version = '0.0.1-SNAPSHOT'
     sourceCompatibility = JavaVersion.VERSION_11
     targetCompatibility = JavaVersion.VERSION_11
 
